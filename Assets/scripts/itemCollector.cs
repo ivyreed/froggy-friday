@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class itemCollector : MonoBehaviour
 {
-    private int token=0;
+    private int toben=0;
+    [SerializeField] private Text tokensText;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision) 
     {
     if (collision.gameObject.CompareTag("token"))
     {
         Destroy(collision.gameObject);
-        token++;
-        Debug.Log("token:"+token);
+        toben++;
+        tokensText.text= "tokens:" + toben;
     }
     }
 }
