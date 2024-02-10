@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-
 public class playerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    public enum movementState { idle, running, jumping, falling };
+
+    public Rigidbody2D rb;
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
-    private Animator anim;
+    public Animator anim;
     private float dirX;
 
     [SerializeField] private LayerMask jumpGround;
@@ -16,7 +17,8 @@ public class playerMovement : MonoBehaviour
     [SerializeField] private float jumpHeight=25f;
     [SerializeField] private float moveSpeed=10f;
     
-    private enum movementState{idle, running, jumping, falling};
+    
+ 
    
  
     // Start is called before the first frame update
@@ -29,7 +31,7 @@ public class playerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         dirX=Input.GetAxisRaw("Horizontal");
 
