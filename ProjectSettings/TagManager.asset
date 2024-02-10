@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - token
+  - trap
   layers:
   - Default
   - TransparentFX
