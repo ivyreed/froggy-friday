@@ -42,6 +42,12 @@ HUD
 no death scene. they will die a lot later on. it will just get in the way.
 
 ## Mechanics
+
+Charachter movement
+  - coyote timer
+  - jump bufffer
+  - ledge hop
+  
 get parallax code working
 
 get next level once hit finish working
