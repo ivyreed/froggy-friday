@@ -2,17 +2,17 @@
 
 ## Table of Contents
 
-1. [UI](UI) 
-2. [Mechanics](Mechanics)
-3. [WorldBuilding](WorldBuilding)
-4. [Story-&-Narration](Story-&-Narration)
-5. [Assets](Assets)
-6. [SounEffects](SoundEffects)
-7. [Misc](Misc)
-8. [Goals](Goals)
-9. [Software-&-Badging](Sooftware-&-Badging)
-10. [Contributors](Contributors)
-11. [Deployment](Deployment)
+1. [UI](#ui) 
+2. [Mechanics](#mechanics)
+3. [WorldBuilding](#worldbuilding)
+4. [Story](#story)
+5. [Assets](#assets)
+6. [SounEffects](#soundeffects)
+7. [Misc](#misc)
+8. [Goals](#goals)
+9. [Badging](#badging)
+10. [Contributors](#contributors)
+11. [Deployment](#deployment)
 
 ## UI
 (all of these are more template. if buck wants to change any of this that is fine)
@@ -47,7 +47,7 @@ Charachter movement
   - coyote timer
   - jump bufffer
   - ledge hop
-  
+
 get parallax code working
 
 get next level once hit finish working
@@ -65,7 +65,7 @@ levels will be prety tall with author completion times ranging from 3-7 minutes 
   - reason for this being it will be a mix between rage/muscle memory and puzzle solving
   - this can ideally get us to have a new player game completion time of over an hour with just 6 ish levels (assuming it takes multiple tries to beat each level)
 
-## Story-&-Narration
+## Story
 
 Flush out narrators charachter and reasonings
 
@@ -149,7 +149,7 @@ implement achievements
 ## Goals
 ideally would like to have 1-3 levels close enough to completion to create demo/trailer and steam page by 3/15
 
-## Software-&-Badging 
+## Badging 
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white) ![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white) ![Unity](https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white) ![Steam](https://img.shields.io/badge/steam-%23000000.svg?style=for-the-badge&logo=steam&logoColor=white)
 
 ## Contributors 
