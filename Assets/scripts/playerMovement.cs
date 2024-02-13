@@ -11,6 +11,10 @@ public class playerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     public Animator anim;
     private float dirX;
+    private float coyoteTime = .1f;
+    private float coyotyTimeCounter;
+    private float jumpBufferTime = .1f;
+    private float jumpBufferCounter;
 
     [SerializeField] private LayerMask jumpGround;
     
@@ -36,10 +40,33 @@ public class playerMovement : MonoBehaviour
         dirX=Input.GetAxisRaw("Horizontal");
 
         rb.velocity=new Vector2(dirX*moveSpeed,rb.velocity.y);
+
+        if (isOnGround())
+        {
+            coyotyTimeCounter=coyoteTime;
+        }
+        else
+        {
+            coyotyTimeCounter-=Time.deltaTime;
+        }
+        if (Input.GetButtonDown("Jump"))
+        {
+            jumpBufferCounter=jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter-=Time.deltaTime;
+        }
         
-        if (Input.GetButtonDown("Jump") && isOnGround())
+        if (jumpBufferCounter>0f && coyotyTimeCounter>0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+            jumpBufferCounter=0f;
+        }
+        if (Input.GetButtonUp("Jump") && rb.velocity.y>0f)
+        {
+            rb.velocity=new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            coyotyTimeCounter=0f;
         }
         UpdateAnimationState();
     }
