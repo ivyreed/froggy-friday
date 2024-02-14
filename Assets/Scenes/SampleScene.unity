@@ -13844,6 +13844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 240837120}
   - component: {fileID: 240837119}
+
   - component: {fileID: 240837118}
   - component: {fileID: 240837121}
   - component: {fileID: 240837122}
@@ -13851,6 +13852,7 @@ GameObject:
   - component: {fileID: 240837123}
   - component: {fileID: 240837125}
   - component: {fileID: 240837126}
+
   m_Layer: 0
   m_Name: mirror
   m_TagString: Untagged
@@ -13858,24 +13860,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &240837118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240837117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77b62a9563c20494db26357353cebf09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  jumpGround:
-    serializedVersion: 2
-    m_Bits: 64
-  jumpHeight: 25
-  moveSpeed: 10
+
 --- !u!212 &240837119
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14080,6 +14065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84d3a1157be5f04fb443d2c3d65f5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
 --- !u!1 &245165073
 GameObject:
   m_ObjectHideFlags: 0
@@ -14775,7 +14761,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &755334530
@@ -15042,7 +15028,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &934780412
@@ -15126,7 +15112,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1009324259 stripped

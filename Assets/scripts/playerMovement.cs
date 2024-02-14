@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Unity.VisualScripting;
+
 public class playerMovement : MonoBehaviour
 {
     public enum movementState { idle, running, jumping, falling };
@@ -20,6 +22,7 @@ public class playerMovement : MonoBehaviour
     
     [SerializeField] private float jumpHeight=25f;
     [SerializeField] private float moveSpeed=10f;
+    [SerializeField] private bool isMirror;
     
     
  
@@ -32,15 +35,29 @@ public class playerMovement : MonoBehaviour
         anim= GetComponent<Animator>();
         sprite=GetComponent<SpriteRenderer>();
         coll=GetComponent<BoxCollider2D>();
+        // if (isMirror==true)
+        // {
+        //     dirX=-dirX;
+        // }
     }
 
     // Update is called once per frame
     public void Update()
     {
-        dirX=Input.GetAxisRaw("Horizontal");
+
+        // dirX=Input.GetAxisRaw("Horizontal");
 
         rb.velocity=new Vector2(dirX*moveSpeed,rb.velocity.y);
+        if (isMirror==true)
+        {
+            dirX = -Input.GetAxisRaw("Horizontal");
 
+        }
+        else
+        {
+            dirX = Input.GetAxisRaw("Horizontal");
+
+        }
         if (isOnGround())
         {
             coyotyTimeCounter=coyoteTime;
