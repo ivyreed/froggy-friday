@@ -35,10 +35,6 @@ public class playerMovement : MonoBehaviour
         anim= GetComponent<Animator>();
         sprite=GetComponent<SpriteRenderer>();
         coll=GetComponent<BoxCollider2D>();
-        // if (isMirror==true)
-        // {
-        //     dirX=-dirX;
-        // }
     }
 
     // Update is called once per frame
