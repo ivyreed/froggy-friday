@@ -11,9 +11,9 @@ public class playerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     public Animator anim;
     private float dirX;
-    private float coyoteTime = .1f;
+    [SerializeField] private float coyoteTime = .1f;
     private float coyotyTimeCounter;
-    private float jumpBufferTime = .1f;
+    [SerializeField] private float jumpBufferTime = .1f;
     private float jumpBufferCounter;
 
     [SerializeField] private LayerMask jumpGround;
