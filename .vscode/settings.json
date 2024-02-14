@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "frogg friday.sln"
+    "dotnet.defaultSolution": "froggy-friday.sln"
 }
