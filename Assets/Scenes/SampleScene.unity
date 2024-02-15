@@ -13770,6 +13770,7 @@ MonoBehaviour:
   jumpHeight: 25
   moveSpeed: 10
   isMirror: 0
+  maxFallSpeed: 20
 --- !u!95 &123612039
 Animator:
   serializedVersion: 5
@@ -14085,6 +14086,7 @@ MonoBehaviour:
   jumpHeight: 25
   moveSpeed: 10
   isMirror: 1
+  maxFallSpeed: 20
 --- !u!1 &245165073
 GameObject:
   m_ObjectHideFlags: 0
@@ -14254,6 +14256,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -14371,6 +14374,18 @@ MonoBehaviour:
   thirdMultiplier: 0.55
   fourthMultiplier: 0.4
   fifthMultiplier: 0.25
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30edb8368d65e6048856b97c7772c10e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &527715395 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5605197173336583632, guid: 889c67ee83629e549998d170c9971f33, type: 3}

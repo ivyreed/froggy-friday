@@ -23,11 +23,12 @@ public class playerMovement : MonoBehaviour
     [SerializeField] private float jumpHeight=25f;
     [SerializeField] private float moveSpeed=10f;
     [SerializeField] private bool isMirror;
-    
-    
- 
-   
- 
+    [SerializeField] private float maxFallSpeed= 20f;
+
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +44,7 @@ public class playerMovement : MonoBehaviour
 
         // dirX=Input.GetAxisRaw("Horizontal");
 
-        rb.velocity=new Vector2(dirX*moveSpeed,rb.velocity.y);
+        rb.velocity=new Vector2(dirX*moveSpeed,Mathf.Clamp(rb.velocity.y,-maxFallSpeed,100));
         if (isMirror==true)
         {
             dirX = -Input.GetAxisRaw("Horizontal");
