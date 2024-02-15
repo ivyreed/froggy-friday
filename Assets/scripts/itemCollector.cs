@@ -14,14 +14,14 @@ public class itemCollector : MonoBehaviour
     {
         Destroy(collision.gameObject);
         toben++;
-        tokensText.text= "i said kiss";
+        tokensText.text= "Tokens = (token)";
     }
     }
      private void OnCollisionEnter2D(Collision2D collision) 
     {
         if (collision.gameObject.name == "mirror")
         {
-            tokensText.text= "gay";
+            tokensText.text= "Tokens =" + toben;
         }
     }
 }
