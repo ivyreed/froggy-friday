@@ -14,16 +14,16 @@ public class playerMovement : MonoBehaviour
     public Animator anim;
     private float dirX;
     [SerializeField] private float coyoteTime = .1f;
-    private float coyotyTimeCounter;
+    private float coyoteTimeCounter;
     [SerializeField] private float jumpBufferTime = .1f;
     private float jumpBufferCounter;
 
     [SerializeField] private LayerMask jumpGround;
-    
-    [SerializeField] private float jumpHeight=25f;
-    [SerializeField] private float moveSpeed=10f;
+
+    [SerializeField] private float jumpHeight = 25f;
+    [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private bool isMirror;
-    [SerializeField] private float maxFallSpeed= 20f;
+    [SerializeField] private float maxFallSpeed = 20f;
 
 
 
@@ -32,10 +32,10 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb= GetComponent<Rigidbody2D>();
-        anim= GetComponent<Animator>();
-        sprite=GetComponent<SpriteRenderer>();
-        coll=GetComponent<BoxCollider2D>();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
+        coll = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -44,79 +44,55 @@ public class playerMovement : MonoBehaviour
 
         // dirX=Input.GetAxisRaw("Horizontal");
 
-        rb.velocity=new Vector2(dirX*moveSpeed,Mathf.Clamp(rb.velocity.y,-maxFallSpeed,100));
-        if (isMirror==true)
-        {
-            dirX = -Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(dirX * moveSpeed, Mathf.Clamp(rb.velocity.y, -maxFallSpeed, 100));
 
-        }
-        else
-        {
-            dirX = Input.GetAxisRaw("Horizontal");
+        dirX = isMirror ? -Input.GetAxisRaw("Horizontal") : Input.GetAxisRaw("Horizontal");
 
-        }
         if (isOnGround())
         {
-            coyotyTimeCounter=coyoteTime;
+            coyoteTimeCounter = coyoteTime;
         }
         else
         {
-            coyotyTimeCounter-=Time.deltaTime;
+            coyoteTimeCounter -= Time.deltaTime;
         }
         if (Input.GetButtonDown("Jump"))
         {
-            jumpBufferCounter=jumpBufferTime;
+            jumpBufferCounter = jumpBufferTime;
         }
         else
         {
-            jumpBufferCounter-=Time.deltaTime;
+            jumpBufferCounter -= Time.deltaTime;
         }
-        
-        if (jumpBufferCounter>0f && coyotyTimeCounter>0f)
+
+        if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-            jumpBufferCounter=0f;
+            jumpBufferCounter = 0f;
+            coyoteTimeCounter = 0f;
         }
-        if (Input.GetButtonUp("Jump") && rb.velocity.y>0f)
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
-            rb.velocity=new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            coyotyTimeCounter=0f;
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            coyoteTimeCounter = 0f;
         }
         UpdateAnimationState();
     }
 
     private void UpdateAnimationState()
     {
-
-        movementState state;
-        // sprite.flipX = dirX < 0f;
-        // state = dirX == 0 ? movementState.idle : movementState.running;
-        if (dirX > 0f)
+        sprite.flipX = dirX < 0f;
+        var state = rb.velocity.y switch
         {
-            state = movementState.running;
-            sprite.flipX=false;
-        }
-        else if (dirX < 0f)
-        {
-            state = movementState.running;
-            sprite.flipX=true;
-        }
-        else
-        {
-            state = movementState.idle;
-        }
-        if (rb.velocity.y > .1f)
-        {
-            state = movementState.jumping;
-        }
-        if (rb.velocity.y < -.1f)
-            state = movementState.falling;
-
-        anim.SetInteger("state",(int)state);
+            > .1f => movementState.jumping,
+            < -.1f => movementState.falling,
+            _ => dirX == 0 ? movementState.idle : movementState.running,
+        };
+        anim.SetInteger("state", (int)state);
     }
     private bool isOnGround()
-        {
-           return Physics2D.BoxCast(coll.bounds.center,coll.bounds.size,0f,Vector2.down,.1f,jumpGround);
-        }
-    
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpGround);
+    }
+
 }
