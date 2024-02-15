@@ -13,6 +13,7 @@
 9. [Badging](#badging)
 10. [Contributors](#contributors)
 11. [Deployment](#deployment)
+12. [Bugs](#bugs)
 
 ## UI
 (all of these are more template. if buck wants to change any of this that is fine)
@@ -169,3 +170,7 @@ jim rigid
 
 ## Deployment
 for readme
+
+## Bugs
+-platform sticky
+-fall through level
