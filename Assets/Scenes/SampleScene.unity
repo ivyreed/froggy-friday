@@ -16511,6 +16511,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 673040581}
     m_Modifications:
+    - target: {fileID: 1037349229137799843, guid: 889c67ee83629e549998d170c9971f33, type: 3}
+      propertyPath: m_Size.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037349229137799843, guid: 889c67ee83629e549998d170c9971f33, type: 3}
+      propertyPath: m_Size.y
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037349229137799843, guid: 889c67ee83629e549998d170c9971f33, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8dea0a4590923e445acb0a3a325ca160, type: 3}
+    - target: {fileID: 1037349229137799843, guid: 889c67ee83629e549998d170c9971f33, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3801839287278594326, guid: 889c67ee83629e549998d170c9971f33, type: 3}
       propertyPath: m_Name
       value: spikes
