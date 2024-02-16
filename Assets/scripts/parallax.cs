@@ -29,13 +29,17 @@ public class parallax : MonoBehaviour
 
 
     // Update is called once per frame
+    private Vector2 parallaxMultiplier(float multiplier)
+    {
+        return new Vector2(transform.position.x, transform.position.y*multiplier);
+    }
     void Update()
     {
-        oneLayer.transform.position=new Vector2(transform.position.x,transform.position.y*firstMultiplier);
-        twoLayer.transform.position = new Vector2(transform.position.x, transform.position.y * secondMultiplier);
-        threeLayer.transform.position = new Vector2(transform.position.x, transform.position.y * thirdMultiplier);
-        fourLayer.transform.position = new Vector2(transform.position.x, transform.position.y * fourthMultiplier);
-        fiveLayer.transform.position = new Vector2(transform.position.x, transform.position.y * fifthMultiplier);
+        oneLayer.transform.position= parallaxMultiplier(firstMultiplier);
+        twoLayer.transform.position = parallaxMultiplier(secondMultiplier);
+        threeLayer.transform.position = parallaxMultiplier(thirdMultiplier);
+        fourLayer.transform.position = parallaxMultiplier(fourthMultiplier);
+        fiveLayer.transform.position = parallaxMultiplier(fifthMultiplier);
 
     }
 }
