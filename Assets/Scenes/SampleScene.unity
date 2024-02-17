@@ -15519,6 +15519,7 @@ MonoBehaviour:
   mirror: {fileID: 240837120}
   mirrorRB: {fileID: 240837122}
   winHeight: 50
+  waitTime: 5
 --- !u!212 &1236373695
 SpriteRenderer:
   m_ObjectHideFlags: 0

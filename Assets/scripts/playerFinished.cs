@@ -5,6 +5,8 @@ using System.Security.Cryptography;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class playerFinished : MonoBehaviour
 {
@@ -15,13 +17,15 @@ public class playerFinished : MonoBehaviour
     [SerializeField] private Rigidbody2D mirrorRB;
 
     [SerializeField] private float winHeight = 50;
+    private float winCounter;
+    [SerializeField] private float waitTime;
 
-    private BoxCollider2D coll;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        coll = GetComponent<BoxCollider2D>();
 
     }
 
@@ -32,8 +36,17 @@ public class playerFinished : MonoBehaviour
         {
             playerRB.gravityScale = 0;
             mirrorRB.gravityScale = 0;
+            winCounter -= Time.deltaTime;
 
         }
+        if(winCounter<-waitTime)
+        {
+            RestartLevel();
+        }
 
+    }
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
