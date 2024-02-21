@@ -9,21 +9,31 @@ public class cameraTarget : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Transform mirror;
     [SerializeField] private float splitAmount = 7f;
+
+    [SerializeField] private float meetSplit = 7f;
+
     private void Update()
     {
-        float distance=Math.Abs(player.position.y - mirror.position.y);
+        var fix = splitAmount / 2;
+
+        float distance =Math.Abs(player.position.y - mirror.position.y);
         if (distance>splitAmount)
         {
+            // finds the distance between players 
             var max= Math.Max(player.position.y, mirror.position.y);
-            transform.position = new Vector3(transform.position.x, max - splitAmount/2, transform.position.z);
+            //  - splitAmount/2
+            transform.position = new Vector3(transform.position.x, max - fix, transform.position.z);
+
 
         }
         else
         {
+            var min= Math.Min(player.position.y, mirror.position.y);
             var middle = (player.position.y + mirror.position.y)/2;
-            transform.position = new Vector3(transform.position.x, middle, transform.position.z);
+            transform.position = new Vector3(transform.position.x, min +fix, transform.position.z);
 
         }
+
 
     }
 }
