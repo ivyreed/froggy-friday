@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Unity.VisualScripting;
+using System.Runtime.CompilerServices;
 
 public class playerMovement : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class playerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private bool isMirror;
     [SerializeField] private float maxFallSpeed = 20f;
+    [SerializeField] private float jumpSensitivity = .1f;
+
 
 
 
@@ -73,7 +76,7 @@ public class playerMovement : MonoBehaviour
         }
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * jumpSensitivity);
             coyoteTimeCounter = 0f;
         }
         UpdateAnimationState();
