@@ -12,11 +12,20 @@ public class parallax : MonoBehaviour
 [SerializeField] public Transform fourLayer;
 [SerializeField] public Transform fiveLayer;
 
+[SerializeField] public Transform sixLayer;
+
+[SerializeField] public Transform sevenLayer;
+
+
+
 [SerializeField] public float firstMultiplier;
 [SerializeField] public float secondMultiplier;
 [SerializeField] public float thirdMultiplier;
 [SerializeField] public float fourthMultiplier;
 [SerializeField] public float fifthMultiplier;
+[SerializeField] public float sixthMultiplier;
+[SerializeField] public float seventhMultiplier;
+
 
 
 
@@ -31,7 +40,7 @@ public class parallax : MonoBehaviour
     // Update is called once per frame
     private Vector2 parallaxMultiplier(float multiplier)
     {
-        return new Vector2(transform.position.x, transform.position.y*multiplier);
+        return new Vector2(transform.position.x, (transform.position.y*multiplier)+20);
     }
     void Update()
     {
@@ -40,6 +49,9 @@ public class parallax : MonoBehaviour
         threeLayer.transform.position = parallaxMultiplier(thirdMultiplier);
         fourLayer.transform.position = parallaxMultiplier(fourthMultiplier);
         fiveLayer.transform.position = parallaxMultiplier(fifthMultiplier);
+        sixLayer.transform.position = parallaxMultiplier(sixthMultiplier);
+        sevenLayer.transform.position = parallaxMultiplier(seventhMultiplier);
+
 
     }
 }

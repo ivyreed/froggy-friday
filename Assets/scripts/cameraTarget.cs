@@ -10,7 +10,7 @@ public class cameraTarget : MonoBehaviour
     [SerializeField] private Transform mirror;
     [SerializeField] private float splitAmount = 7f;
 
-    [SerializeField] private float meetSplit = 7f;
+    // [SerializeField] private float meetSplit = 7f;
 
     private void Update()
     {

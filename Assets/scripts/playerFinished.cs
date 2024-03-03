@@ -47,6 +47,6 @@ public class playerFinished : MonoBehaviour
     }
     private void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
